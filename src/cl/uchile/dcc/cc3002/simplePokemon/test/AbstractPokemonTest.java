@@ -1,6 +1,6 @@
-package cl.uchile.dcc.cc3002.minitarea1.test;
+package cl.uchile.dcc.cc3002.simplePokemon.test;
 
-import cl.uchile.dcc.cc3002.minitarea1.main.IPokemon;
+import cl.uchile.dcc.cc3002.simplePokemon.main.IPokemon;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package cl.uchile.dcc.cc3002.minitarea1.main;
+package cl.uchile.dcc.cc3002.simplePokemon.main;
 
 public abstract class AbstractPokemon implements IPokemon {
     protected String name;

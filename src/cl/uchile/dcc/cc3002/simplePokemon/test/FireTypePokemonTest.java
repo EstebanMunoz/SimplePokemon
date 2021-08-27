@@ -1,7 +1,7 @@
-package cl.uchile.dcc.cc3002.minitarea1.test;
-import cl.uchile.dcc.cc3002.minitarea1.main.FireTypePokemon;
-import cl.uchile.dcc.cc3002.minitarea1.main.WaterTypePokemon;
-import cl.uchile.dcc.cc3002.minitarea1.main.GrassTypePokemon;
+package cl.uchile.dcc.cc3002.simplePokemon.test;
+import cl.uchile.dcc.cc3002.simplePokemon.main.FireTypePokemon;
+import cl.uchile.dcc.cc3002.simplePokemon.main.WaterTypePokemon;
+import cl.uchile.dcc.cc3002.simplePokemon.main.GrassTypePokemon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
