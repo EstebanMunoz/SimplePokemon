@@ -1,7 +1,8 @@
-package cl.uchile.dcc.cc3002.simplePokemon.test;
-import cl.uchile.dcc.cc3002.simplePokemon.main.FireTypePokemon;
-import cl.uchile.dcc.cc3002.simplePokemon.main.WaterTypePokemon;
-import cl.uchile.dcc.cc3002.simplePokemon.main.GrassTypePokemon;
+package cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes;
+import cl.uchile.dcc.simplePokemon.Pokemon.AbstractPokemonTest;
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.FireTypePokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.GrassTypePokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.WaterTypePokemon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,21 +12,22 @@ class WaterTypePokemonTest extends AbstractPokemonTest {
     private final String NAME = "Pepito";
     private final String SPECIES = "Squirtle";
     private final int HP = 100;
+    private final int PP = 20;
     private WaterTypePokemon waterPokemon;
 
     @BeforeEach
     void setUp() {
-        waterPokemon = new WaterTypePokemon(NAME, SPECIES, HP);
+        waterPokemon = new WaterTypePokemon(NAME, SPECIES, HP, PP);
     }
 
     @Test
     void constructorTest() {
-        WaterTypePokemon expected = new WaterTypePokemon(NAME, SPECIES, HP);
+        WaterTypePokemon expected = new WaterTypePokemon(NAME, SPECIES, HP, PP);
         checkConstructor(expected, waterPokemon);
 
-        WaterTypePokemon differentName = new WaterTypePokemon("Juancho", SPECIES, HP);
-        WaterTypePokemon differentSpecies = new WaterTypePokemon(NAME, "Totodile", HP);
-        WaterTypePokemon differentHP = new WaterTypePokemon(NAME, SPECIES, 50);
+        WaterTypePokemon differentName = new WaterTypePokemon("Juancho", SPECIES, HP, PP);
+        WaterTypePokemon differentSpecies = new WaterTypePokemon(NAME, "Totodile", HP, PP);
+        WaterTypePokemon differentHP = new WaterTypePokemon(NAME, SPECIES, 50, PP);
 
         checkDifferent(differentName, waterPokemon);
         checkDifferent(differentSpecies, waterPokemon);
@@ -64,30 +66,30 @@ class WaterTypePokemonTest extends AbstractPokemonTest {
 
     @Test
     void testFireAttack() {
-        FireTypePokemon fireOpponent = new FireTypePokemon(NAME, SPECIES, HP);
+        FireTypePokemon fireOpponent = new FireTypePokemon(NAME, SPECIES, HP, PP);
         waterPokemon.fireAttackReceived(fireOpponent);
         assertEquals(HP - 5, waterPokemon.getHP());
     }
 
     @Test
     void testWaterAttack() {
-        WaterTypePokemon waterOpponent = new WaterTypePokemon(NAME, SPECIES, HP);
+        WaterTypePokemon waterOpponent = new WaterTypePokemon(NAME, SPECIES, HP, PP);
         waterPokemon.waterAttackReceived(waterOpponent);
         assertEquals(HP - 5, waterPokemon.getHP());
     }
 
     @Test
     void testGrassAttack() {
-        GrassTypePokemon grassOpponent = new GrassTypePokemon(NAME, SPECIES, HP);
+        GrassTypePokemon grassOpponent = new GrassTypePokemon(NAME, SPECIES, HP, PP);
         waterPokemon.grassAttackReceived(grassOpponent);
         assertEquals(HP - 10, waterPokemon.getHP());
     }
 
     @Test
     void testAttack() {
-        FireTypePokemon fireOpponent = new FireTypePokemon(NAME, SPECIES, HP);
-        WaterTypePokemon waterOpponent = new WaterTypePokemon(NAME, SPECIES, HP);
-        GrassTypePokemon grassOpponent = new GrassTypePokemon(NAME, SPECIES, HP);
+        FireTypePokemon fireOpponent = new FireTypePokemon(NAME, SPECIES, HP, PP);
+        WaterTypePokemon waterOpponent = new WaterTypePokemon(NAME, SPECIES, HP, PP);
+        GrassTypePokemon grassOpponent = new GrassTypePokemon(NAME, SPECIES, HP, PP);
 
         waterPokemon.attack(fireOpponent);
         waterPokemon.attack(waterOpponent);

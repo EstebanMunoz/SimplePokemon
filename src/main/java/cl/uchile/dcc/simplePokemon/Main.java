@@ -1,4 +1,4 @@
-package cl.uchile.dcc.cc3002.simplePokemon.main;
+package cl.uchile.dcc.simplePokemon;
 
 /** A class intended to be initialized by the user. */
 public class Main {

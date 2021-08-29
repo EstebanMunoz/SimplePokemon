@@ -1,10 +1,10 @@
-package cl.uchile.dcc.cc3002.simplePokemon.main;
+package cl.uchile.dcc.simplePokemon.Pokemon;
 
 /**
  * Represents a Pokémon class of any type. Currently, there are 3 Pokémon
  * classes: FireTypePokemon, WaterTypePokemon and GrassTypePokemon.
- * A Pokémon class contains 3 parameters: name, species and HP (health points).
- * A Pokémon can be controlled by the user or the CPU.
+ * A Pokémon class contains 4 parameters: name, species, HP (health points)
+ * and PP (power points).
  */
 public interface IPokemon {
 
@@ -14,14 +14,26 @@ public interface IPokemon {
     /** Returns this Pokémon species.*/
     String getSpecies();
 
-    /** Returns the actual amount oh health points of this Pokémon. */
+    /** Returns the actual amount of health points of this Pokémon. */
     int getHP();
+
+    /** Returns the actual amount of health points of this Pokémon. */
+    int getPP();
+
+    /** Returns the max possible amount of health points of this Pokémon. */
+    int getMaxHP();
+
+    /** Returns the max possible amount of health points of this Pokémon. */
+    int getMaxPP();
 
     /** Sets the name of this Pokémon to the variable 'name'. */
     void setName(String name);
 
     /** Sets the HP of this Pokémon to 'HP' points. */
     void setHP(int HP);
+
+    /** Sets the PP of this Pokémon to 'PP' points. */
+    void setPP(int PP);
 
     /**
      * Returns a boolean indicating if a Pokémon is out of combat. A Pokémon
@@ -35,7 +47,7 @@ public interface IPokemon {
      */
     void attack(IPokemon Pokemon);
 
-    /** This is attacked by a fire type Pokémon- */
+    /** This is attacked by a fire type Pokémon. */
     void fireAttackReceived(IPokemon Pokemon);
 
     /** This is attacked by a water type Pokémon. */

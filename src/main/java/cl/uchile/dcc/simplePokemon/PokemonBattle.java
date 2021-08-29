@@ -1,4 +1,6 @@
-package cl.uchile.dcc.cc3002.simplePokemon.main;
+package cl.uchile.dcc.simplePokemon;
+
+import cl.uchile.dcc.simplePokemon.Pokemon.IPokemon;
 
 import java.util.Random;
 

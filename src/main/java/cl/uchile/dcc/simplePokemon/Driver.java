@@ -1,4 +1,9 @@
-package cl.uchile.dcc.cc3002.simplePokemon.main;
+package cl.uchile.dcc.simplePokemon;
+
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.FireTypePokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.GrassTypePokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.IPokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.PokemonTypes.WaterTypePokemon;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -66,11 +71,11 @@ public class Driver {
     public IPokemon getPokemon(String species) {
         switch (species) {
             case "Charmander":
-                return new FireTypePokemon(species, 100);
+                return new FireTypePokemon(species, 100, 20);
             case "Squirtle":
-                return new WaterTypePokemon(species, 100);
+                return new WaterTypePokemon(species, 100, 20);
             case "Bulbasaur":
-                return new GrassTypePokemon(species, 100);
+                return new GrassTypePokemon(species, 100, 20);
             default:
                 throw new IllegalStateException("Unexpected value: " + species);
         }

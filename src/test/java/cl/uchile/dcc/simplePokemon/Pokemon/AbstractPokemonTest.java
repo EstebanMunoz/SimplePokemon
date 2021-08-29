@@ -1,6 +1,6 @@
-package cl.uchile.dcc.cc3002.simplePokemon.test;
+package cl.uchile.dcc.simplePokemon.Pokemon;
 
-import cl.uchile.dcc.cc3002.simplePokemon.main.IPokemon;
+import cl.uchile.dcc.simplePokemon.Pokemon.IPokemon;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,8 +32,17 @@ public class AbstractPokemonTest {
     }
 
     protected void checkSetHP(int HP, IPokemon Pokemon) {
+        int newHP = Math.min(Math.max(HP, 0), Pokemon.getMaxHP());
+
         Pokemon.setHP(HP);
-        assertEquals(HP, Pokemon.getHP());
+        assertEquals(newHP, Pokemon.getHP());
+    }
+
+    protected void checkSetPP(int PP, IPokemon Pokemon) {
+        int newPP = Math.min(Math.max(PP, 0), Pokemon.getMaxPP());
+
+        Pokemon.setHP(PP);
+        assertEquals(newPP, Pokemon.getHP());
     }
 
     protected void checkOutOfCombat(IPokemon Pokemon) {
